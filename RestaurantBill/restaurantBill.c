@@ -28,8 +28,15 @@
 /* END OF pick_meal() FUNCTION*/
 
 /* START OF print_meal() FUNCTION */
+// Declare string for meal name
+// Declare float for meal price
+// Declare float for tax amount
+// Declare float for tip amount
 
-// Begin switch statement to determine which meal was picked
+// Switch statement to determine which meal was picked
+
+// Calculate tax amount
+// Calculate tip amount
 
 // Print meal name
 // Print meal cost
