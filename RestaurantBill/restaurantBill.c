@@ -4,35 +4,64 @@
 */
 
 // Include the stdio library
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
 // Declare enum meals{salad, soup, sandwich, pizza} (0 - 3)
+enum meals{salad, soup, sandwich, pizza};
 
 // Declare functions
+static void print_meal(int, float, float);
 
-/* START OF main() FUNCTION */
+int main(int argc, char *argv[]){
+    float tax, tip;     // Declare 2 floats to hold tax and tip percentages 
+    int meal;           // Declare an int meal
+    srand(time(0));     // Have to seed random num generator
 
-// Declare 2 floats to hold tax and tip percentages 
-//  (assuming 0.XX format (no more that 2 places after the decimal point))
-// Declare an int meal, Assign it a random value 0-3
-// Call print_meal()
+    tax = atof(argv[1]);
+    tip = atof(argv[2]);
+    meal = rand() % 4;
 
-/* END OF main() FUNCTION */
+    print_meal(meal, tax, tip);    // Call print_meal()
+}
 
-/* START OF print_meal() FUNCTION */
-// Declare string for meal name
-// Declare float for meal price
-// Declare float for tax amount
-// Declare float for tip amount
+static void print_meal(int meal, float tax, float tip){
+    char mealName[9];
+    float price;        // Declare float for meal price
+    float taxAmt;       // Declare float for tax amount
+    float tipAmt;       // Declare float for tip amount
 
-// Switch statement to determine which meal was picked
+    switch(meal){ // Switch statement to determine which meal was picked
+        case 0:
+            strcpy(mealName, "Salad");
+            price = 9.95;
+            break;
+        case 1:
+            strcpy(mealName, "Soup");
+            price = 4.55;
+            break;
+        case 2:
+            strcpy(mealName, "Sandwich");
+            price = 13.25;
+            break;
+        case 3:
+            strcpy(mealName, "Pizza");
+            price = 22.35;
+            break;
+        default:
+            strcpy(mealName, "Invalid");
+            price = -1;
+    }
 
-// Calculate tax amount
-// Calculate tip amount
+    taxAmt = price * tax;   // Calculate tax amount
+    tipAmt = price * tip;   // Calculate tip amount
 
-// Print meal name
-// Print meal cost
-// Print tax amount
-// Print tip amount
-// Print total bill
+    printf("Meal: %s\n", mealName);                           // Print meal name
+    printf("Meal cost: %.2f\n", price);                       // Print meal cost
+    printf("Tax Amount: %.2f\n", taxAmt);                     // Print tax amount
+    printf("Tip Amount: %.2f\n", tipAmt);                     // Print tip amount
+    printf("Total Bill: %.2f\n", (price + taxAmt + tipAmt));  // Print total bill
 
-/* END OF print_meal() FUNCTION*/
+}
