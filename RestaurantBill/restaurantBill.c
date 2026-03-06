@@ -13,19 +13,10 @@
 
 // Declare 2 floats to hold tax and tip percentages 
 //  (assuming 0.XX format (no more that 2 places after the decimal point))
-// Declare an int meal
-//  Assign a value from pick_meal()
+// Declare an int meal, Assign it a random value 0-3
 // Call print_meal()
 
 /* END OF main() FUNCTION */
-
-/* START OF pick_meal() FUNCTION */
-
-// Declare a random int within the range (0 - 3) (inclusive) that represents
-//  the meal that's chosen.
-// Return random integer
-
-/* END OF pick_meal() FUNCTION*/
 
 /* START OF print_meal() FUNCTION */
 // Declare string for meal name
