@@ -64,4 +64,5 @@ static void print_meal(int meal, float tax, float tip){
     fprintf(stderr, "Tip Amount: %.2f\n", tipAmt);            // Print tip amount to STDERR
     printf("Total Bill: %.2f\n", (price + taxAmt + tipAmt));  // Print total bill
 
+    return 0;
 }
