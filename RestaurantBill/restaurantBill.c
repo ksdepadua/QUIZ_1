@@ -1,6 +1,6 @@
 /*  
     KEANA DE PADUA - QUIZ 1
-    QUESTION 1, PART A 
+    QUESTION 1, PART B
 */
 
 // Include the stdio library
@@ -61,7 +61,7 @@ static void print_meal(int meal, float tax, float tip){
     printf("Meal: %s\n", mealName);                           // Print meal name
     printf("Meal cost: %.2f\n", price);                       // Print meal cost
     printf("Tax Amount: %.2f\n", taxAmt);                     // Print tax amount
-    printf("Tip Amount: %.2f\n", tipAmt);                     // Print tip amount
+    fprintf(stderr, "Tip Amount: %.2f\n", tipAmt);            // Print tip amount to STDERR
     printf("Total Bill: %.2f\n", (price + taxAmt + tipAmt));  // Print total bill
 
 }
